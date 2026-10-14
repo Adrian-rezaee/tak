@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAK® — Immersive Digital Experience Studio</title>
+<meta name="description" content="TAK is an award-winning creative studio crafting immersive 3D websites, brands and digital products for companies that refuse to be ordinary.">
+<meta name="theme-color" content="#050508">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23770F1A'/%3E%3Ctext x='32' y='45' font-family='Arial' font-weight='700' font-size='34' fill='white' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+<style>
+__INLINE_CSS__
+</style>
+<noscript><style>[data-reveal]{opacity:1;transform:none}#preloader{display:none}</style></noscript>
+</head>
+<body>
+
+<!-- ================= PRELOADER ================= -->
+<div id="preloader" aria-hidden="true">
+  <div class="pre-mark"><span>T</span><span>A</span><span>K</span></div>
+  <div class="pre-bar"><i></i></div>
+  <div class="pre-status">INITIALIZING EXPERIENCE — 0%</div>
+</div>
+
+<!-- overlays -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+<div id="scroll-progress" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- ================= NAVIGATION ================= -->
+<header id="nav">
+  <div class="container nav-inner">
+    <a href="#home" class="logo" aria-label="TAK — home">
+      <span class="logo-cube" aria-hidden="true"><i></i><i></i></span>
+      <b>TAK<em>®</em></b>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#team">Team</a>
+      <a href="#blog">Journal</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#contact" class="btn btn-primary btn-sm">Start a Project
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <button class="burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div id="mobile-menu" aria-label="Mobile navigation">
+  <a href="#services"><small>01</small>Services</a>
+  <a href="#work"><small>02</small>Work</a>
+  <a href="#process"><small>03</small>Process</a>
+  <a href="#team"><small>04</small>Team</a>
+  <a href="#blog"><small>05</small>Journal</a>
+  <a href="#contact"><small>06</small>Contact</a>
+  <div class="mm-cta">
+    <a href="#contact" class="btn btn-primary">Start a Project
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</div>
+
+<main>
+<!-- ================= HERO / 3D SCENE ================= -->
+<section id="home">
+  <canvas id="hero-canvas" aria-label="Interactive 3D scene: floating TAK laptop with holographic screens — drag to rotate"></canvas>
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <!-- CSS-only fallback (shown when WebGL is unavailable) -->
+  <div class="hero-fallback" aria-hidden="true">
+    <div class="hf-grid"></div>
+    <div class="hf-orb"></div>
+    <div class="hf-panel p1"></div>
+    <div class="hf-panel p2"></div>
+    <div class="hf-panel p3"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <span class="eyebrow">TAK® Studio — Immersive Web Design</span>
+      <h1>Digital Experiences<br><span class="red">Beyond Reality</span></h1>
+      <p class="hero-sub">TAK is an award-winning creative studio crafting <b>immersive 3D websites</b>, brands and digital products for companies that refuse to be ordinary.</p>
+      <div class="hero-ctas">
+        <a href="#work" class="btn btn-primary">Explore Our Work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Start a Project</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="num"><span data-count="120">0</span><i>+</i></div><div class="lbl">Projects Shipped</div></div>
+        <div class="stat"><div class="num"><span data-count="14">0</span><i></i></div><div class="lbl">Intl. Awards</div></div>
+        <div class="stat"><div class="num"><span data-count="9">0</span><i></i></div><div class="lbl">Years Running</div></div>
+        <div class="stat"><div class="num"><span data-count="98">0</span><i>%</i></div><div class="lbl">Client Retention</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-side" aria-hidden="true">EST. 2017 — <b>HELSINKI</b> · 60.17°N 24.94°E</div>
+  <div class="scroll-cue" aria-hidden="true">Scroll<span class="line"></span></div>
+  <div class="hero-hud" aria-hidden="true"><span class="dot"></span> TAK.OS v4.2 — System Online</div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item">
+      <span>Immersive Design</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+      <span>WebGL</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+      <span>3D Development</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+      <span>Brand Identity</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+      <span>Motion</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+      <span>E-Commerce</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+      <span>Cinematic Web</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+    </div>
+    <div class="marquee-item">
+      <span>Immersive Design</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+      <span>WebGL</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+      <span>3D Development</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+      <span>Brand Identity</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+      <span>Motion</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+      <span>E-Commerce</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+      <span>Cinematic Web</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" class="section">
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">What We Do</span>
+      <h2 class="sec-title">Capabilities Engineered <span class="red">for Impact</span></h2>
+      <p class="sec-lead">Six disciplines, one obsession — digital experiences that feel like they were sent back from the future.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card" data-tilt data-reveal style="--d:.0s">
+        <span class="service-num">01 / 06</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13.5l9 5 9-5"/><path d="M3 17l9 5 9-5" opacity=".45"/></svg></div>
+        <h3>Immersive Web Design</h3>
+        <p>Cinematic, story-driven websites engineered to win awards and convert visitors into believers.</p>
+        <span class="service-link">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </article>
+      <article class="service-card" data-tilt data-reveal style="--d:.08s">
+        <span class="service-num">02 / 06</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 7.5L12 3 3 7.5v9L12 21l9-4.5v-9z"/><path d="M3 7.5l9 4.5 9-4.5"/><path d="M12 12v9"/></svg></div>
+        <h3>3D &amp; WebGL</h3>
+        <p>Real-time 3D, custom shaders and interactive scenes that run buttery-smooth in every browser.</p>
+        <span class="service-link">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </article>
+      <article class="service-card" data-tilt data-reveal style="--d:.16s">
+        <span class="service-num">03 / 06</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9l4-6z"/><path d="M2 9h20"/><path d="M9 3l3 6 3-6"/><path d="M12 21L9 9M12 21l3-12"/></svg></div>
+        <h3>Brand Identity</h3>
+        <p>Identities with gravity — logotypes, systems and guidelines that make brands unforgettable.</p>
+        <span class="service-link">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </article>
+      <article class="service-card" data-tilt data-reveal style="--d:.0s">
+        <span class="service-num">04 / 06</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6l-6 6 6 6"/><path d="M16 6l6 6-6 6"/><path d="M13 4l-2 16"/></svg></div>
+        <h3>Development</h3>
+        <p>Handcrafted code. Blazing-fast, accessible, scalable builds on a modern stack — no page builders.</p>
+        <span class="service-link">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </article>
+      <article class="service-card" data-tilt data-reveal style="--d:.08s">
+        <span class="service-num">05 / 06</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h3l2-7 4 14 3-10 2 3h6"/></svg></div>
+        <h3>Motion &amp; Interaction</h3>
+        <p>Micro-interactions, film-grade CGI and motion systems that make interfaces feel alive.</p>
+        <span class="service-link">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </article>
+      <article class="service-card" data-tilt data-reveal style="--d:.16s">
+        <span class="service-num">06 / 06</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M6 21V10"/><path d="M11 21V4"/><path d="M16 21v-8"/><path d="M21 21V7"/></svg></div>
+        <h3>E-Commerce &amp; Growth</h3>
+        <p>Storefronts and funnels engineered for conversion — from the first click to the final checkout.</p>
+        <span class="service-link">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORK / PORTFOLIO ================= -->
+<section id="work" class="section">
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Selected Work</span>
+      <h2 class="sec-title">Projects Floating <span class="red">Above the Ordinary</span></h2>
+      <p class="sec-lead">A selection of launches from the studio floor — each one a small world of its own.</p>
+    </div>
+    <div class="work-grid">
+      <a href="#contact" class="work-card" data-reveal style="--d:.0s">
+        <div class="work-media">
+          <img src="__IMG_VANTA__" alt="VANTA Motors — dark automotive website with red neon accents" loading="lazy">
+          <span class="work-year">2026</span>
+          <span class="work-open">View Case <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+        <div class="work-info">
+          <div><h3>VANTA Motors</h3><div class="work-tags"><span class="tag">Automotive</span><span class="tag">WebGL</span></div></div>
+          <span class="work-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </a>
+      <a href="#contact" class="work-card" data-reveal style="--d:.08s">
+        <div class="work-media">
+          <img src="__IMG_NEBULA__" alt="NEBULA — dark fintech dashboard with glowing red charts" loading="lazy">
+          <span class="work-year">2025</span>
+          <span class="work-open">View Case <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+        <div class="work-info">
+          <div><h3>NEBULA</h3><div class="work-tags"><span class="tag">Fintech</span><span class="tag">Dashboard</span></div></div>
+          <span class="work-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </a>
+      <a href="#contact" class="work-card" data-reveal style="--d:.16s">
+        <div class="work-media">
+          <img src="__IMG_AURA__" alt="AURA — luxury fashion e-commerce in dark crimson light" loading="lazy">
+          <span class="work-year">2025</span>
+          <span class="work-open">View Case <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+        <div class="work-info">
+          <div><h3>AURA Studio</h3><div class="work-tags"><span class="tag">Fashion</span><span class="tag">E-Commerce</span></div></div>
+          <span class="work-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </a>
+      <a href="#contact" class="work-card" data-reveal style="--d:.0s">
+        <div class="work-media">
+          <img src="__IMG_PULSE__" alt="PULSE — music streaming interface with red waveforms" loading="lazy">
+          <span class="work-year">2026</span>
+          <span class="work-open">View Case <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+        <div class="work-info">
+          <div><h3>PULSE</h3><div class="work-tags"><span class="tag">Music</span><span class="tag">Product</span></div></div>
+          <span class="work-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </a>
+      <a href="#contact" class="work-card" data-reveal style="--d:.08s">
+        <div class="work-media">
+          <img src="__IMG_ORBIT__" alt="ORBIT — SaaS platform with glowing 3D globe" loading="lazy">
+          <span class="work-year">2024</span>
+          <span class="work-open">View Case <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+        <div class="work-info">
+          <div><h3>ORBIT</h3><div class="work-tags"><span class="tag">SaaS</span><span class="tag">Platform</span></div></div>
+          <span class="work-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </a>
+      <a href="#contact" class="work-card" data-reveal style="--d:.16s">
+        <div class="work-media">
+          <img src="__IMG_HELIOS__" alt="HELIOS — brutalist architecture portfolio at night" loading="lazy">
+          <span class="work-year">2025</span>
+          <span class="work-open">View Case <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+        <div class="work-info">
+          <div><h3>HELIOS</h3><div class="work-tags"><span class="tag">Architecture</span><span class="tag">Portfolio</span></div></div>
+          <span class="work-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section id="process" class="section">
+  <div class="container">
+    <div class="sec-head center" data-reveal>
+      <span class="eyebrow">Process</span>
+      <h2 class="sec-title">From First Signal <span class="red">to Launch</span></h2>
+      <p class="sec-lead">A battle-tested pipeline that turns raw ideas into orbit-ready products.</p>
+    </div>
+    <div class="timeline">
+      <div class="t-rail" aria-hidden="true"><i></i></div>
+      <div class="t-item">
+        <span class="t-node" aria-hidden="true"></span>
+        <div class="t-card">
+          <div class="t-step"><span class="n">PHASE 01</span><span class="d">1–2 weeks</span></div>
+          <h3>Discover</h3>
+          <p>Deep-dive workshops, research and audits. We map the terrain before we move a single pixel.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <span class="t-node" aria-hidden="true"></span>
+        <div class="t-card">
+          <div class="t-step"><span class="n">PHASE 02</span><span class="d">1–2 weeks</span></div>
+          <h3>Strategy</h3>
+          <p>Positioning, information architecture and a creative platform that gives every pixel a purpose.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <span class="t-node" aria-hidden="true"></span>
+        <div class="t-card">
+          <div class="t-step"><span class="n">PHASE 03</span><span class="d">3–5 weeks</span></div>
+          <h3>Design</h3>
+          <p>Art direction, 3D concepts and high-fidelity prototypes — iterated with you, not just for you.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <span class="t-node" aria-hidden="true"></span>
+        <div class="t-card">
+          <div class="t-step"><span class="n">PHASE 04</span><span class="d">3–6 weeks</span></div>
+          <h3>Develop</h3>
+          <p>Pixel-perfect builds with WebGL, animation and strict performance budgets enforced from day one.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <span class="t-node" aria-hidden="true"></span>
+        <div class="t-card">
+          <div class="t-step"><span class="n">PHASE 05</span><span class="d">ongoing</span></div>
+          <h3>Launch &amp; Evolve</h3>
+          <p>Deployment, analytics and continuous optimization. Launch day is the starting line, not the finish.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEAM ================= -->
+<section id="team" class="section">
+  <div class="team-backdrop" aria-hidden="true">
+    <img src="__IMG_STUDIO__" alt="" loading="lazy">
+  </div>
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">The Studio</span>
+      <h2 class="sec-title">Minds Behind <span class="red">the Machine</span></h2>
+      <p class="sec-lead">A small, senior crew of designers, engineers and directors — no account managers, no hand-offs.</p>
+    </div>
+    <div class="team-grid">
+      <article class="team-card" data-tilt data-reveal style="--d:.0s">
+        <div class="team-photo">
+          <img src="__IMG_TEAM1__" alt="Aino Virtanen — Creative Director" loading="lazy">
+          <div class="team-social">
+            <a href="#" aria-label="Aino Virtanen on LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="5" r="2"/><path d="M11 21v-7a4 4 0 0 1 8 0v7"/></svg></a>
+            <a href="#" aria-label="Aino Virtanen on X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+          </div>
+        </div>
+        <div class="team-id"><h3>Aino Virtanen</h3><div class="role">Creative Director</div></div>
+      </article>
+      <article class="team-card" data-tilt data-reveal style="--d:.08s">
+        <div class="team-photo">
+          <img src="__IMG_TEAM2__" alt="Elias Korhonen — Head of 3D &amp; WebGL" loading="lazy">
+          <div class="team-social">
+            <a href="#" aria-label="Elias Korhonen on LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="5" r="2"/><path d="M11 21v-7a4 4 0 0 1 8 0v7"/></svg></a>
+            <a href="#" aria-label="Elias Korhonen on GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6l-6 6 6 6"/><path d="M16 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+        <div class="team-id"><h3>Elias Korhonen</h3><div class="role">Head of 3D &amp; WebGL</div></div>
+      </article>
+      <article class="team-card" data-tilt data-reveal style="--d:.16s">
+        <div class="team-photo">
+          <img src="__IMG_TEAM3__" alt="Sofia Mäkinen — Lead Engineer" loading="lazy">
+          <div class="team-social">
+            <a href="#" aria-label="Sofia Mäkinen on LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="5" r="2"/><path d="M11 21v-7a4 4 0 0 1 8 0v7"/></svg></a>
+            <a href="#" aria-label="Sofia Mäkinen on GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6l-6 6 6 6"/><path d="M16 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+        <div class="team-id"><h3>Sofia Mäkinen</h3><div class="role">Lead Engineer</div></div>
+      </article>
+      <article class="team-card" data-tilt data-reveal style="--d:.24s">
+        <div class="team-photo">
+          <img src="__IMG_TEAM4__" alt="Lauri Niemi — Motion Director" loading="lazy">
+          <div class="team-social">
+            <a href="#" aria-label="Lauri Niemi on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor"/></svg></a>
+            <a href="#" aria-label="Lauri Niemi on Behance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h5a2.5 2.5 0 0 1 0 5H4zM4 12h5.5a2.7 2.7 0 0 1 0 5.4H4zM15 13.5h6a3 3 0 1 0-6 0zm0 0a3 3 0 0 0 5.6 2"/></svg></a>
+          </div>
+        </div>
+        <div class="team-id"><h3>Lauri Niemi</h3><div class="role">Motion Director</div></div>
+      </article>
+    </div>
+    <p class="team-note" data-reveal>+ extended network of specialists — <b>renderers, sound designers, copywriters</b> — assembled per mission</p>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="sec-head center" data-reveal>
+      <span class="eyebrow">Testimonials</span>
+      <h2 class="sec-title">Signals From <span class="red">Our Clients</span></h2>
+    </div>
+    <div class="tslider" data-reveal="zoom">
+      <div class="tframe">
+        <div class="tviewport">
+          <div class="tslides">
+            <div class="tslide">
+              <div class="stars" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.6.56-5 4.5 1.5 6.68L12 16.9 5.99 20l1.5-6.68-5-4.5 6.6-.56L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.6.56-5 4.5 1.5 6.68L12 16.9 5.99 20l1.5-6.68-5-4.5 6.6-.56L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.6.56-5 4.5 1.5 6.68L12 16.9 5.99 20l1.5-6.68-5-4.5 6.6-.56L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.6.56-5 4.5 1.5 6.68L12 16.9 5.99 20l1.5-6.68-5-4.5 6.6-.56L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.6.56-5 4.5 1.5 6.68L12 16.9 5.99 20l1.5-6.68-5-4.5 6.6-.56L12 2z"/></svg>
+              </div>
+              <blockquote>TAK didn't just redesign our website — they rebuilt how customers perceive us. Conversion is up 240% and the site still stops people mid-scroll.</blockquote>
+              <div class="t-who">
+                <div class="t-avatar" aria-hidden="true">M</div>
+                <div style="text-align:left"><div class="tn">Maya Lindqvist</div><div class="tr">CMO — VANTA Motors</div></div>
+              </div>
+            </div>
+            <div class="tslide">
+              <div class="stars" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.6.56-5 4.5 1.5 6.68L12 16.9 5.99 20l1.5-6.68-5-4.5 6.6-.56L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.6.56-5 4.5 1.5 6.68L12 16.9 5.99 20l1.5-6.68-5-4.5 6.6-.56L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.6.56-5 4.5 1.5 6.68L12 16.9 5.99 20l1.5-6.68-5-4.5 6.6-.56L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.6.56-5 4.5 1.5 6.68L12 16.9 5.99 20l1.5-6.68-5-4.5 6.6-.56L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.6.56-5 4.5 1.5 6.68L12 16.9 5.99 20l1.5-6.68-5-4.5 6.6-.56L12 2z"/></svg>
+              </div>
+              <blockquote>The most technically fearless team we've ever worked with. They shipped a real-time 3D experience our previous agency called impossible.</blockquote>
+              <div class="t-who">
+                <div class="t-avatar" aria-hidden="true">D</div>
+                <div style="text-align:left"><div class="tn">Daniel Reyes</div><div class="tr">Founder — PULSE</div></div>
+              </div>
+            </div>
+            <div class="tslide">
+              <div class="stars" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.6.56-5 4.5 1.5 6.68L12 16.9 5.99 20l1.5-6.68-5-4.5 6.6-.56L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.6.56-5 4.5 1.5 6.68L12 16.9 5.99 20l1.5-6.68-5-4.5 6.6-.56L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.6.56-5 4.5 1.5 6.68L12 16.9 5.99 20l1.5-6.68-5-4.5 6.6-.56L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.6.56-5 4.5 1.5 6.68L12 16.9 5.99 20l1.5-6.68-5-4.5 6.6-.56L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26 6.6.56-5 4.5 1.5 6.68L12 16.9 5.99 20l1.5-6.68-5-4.5 6.6-.56L12 2z"/></svg>
+              </div>
+              <blockquote>Every review call felt like unwrapping a gift. Cinematic, fast, and obsessively polished down to the last easing curve.</blockquote>
+              <div class="t-who">
+                <div class="t-avatar" aria-hidden="true">C</div>
+                <div style="text-align:left"><div class="tn">Clara Beaumont</div><div class="tr">Head of Digital — AURA</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="tnav prev" aria-label="Previous testimonial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <button class="tnav next" aria-label="Next testimonial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+      <div class="tdots" role="tablist" aria-label="Testimonial navigation"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOG ================= -->
+<section id="blog" class="section">
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Journal</span>
+      <h2 class="sec-title">Transmissions <span class="red">From the Studio</span></h2>
+      <p class="sec-lead">Notes, experiments and field reports from the frontiers of the 3D web.</p>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card" data-reveal style="--d:.0s">
+        <div class="blog-media">
+          <img src="__IMG_BLOG1__" alt="Abstract chrome waves with red light trails" loading="lazy">
+          <span class="blog-date">Mar 12, 2026</span>
+        </div>
+        <div class="blog-body">
+          <h3>The State of 3D on the Web in 2026</h3>
+          <p>WebGPU, WebXR and the new rules of immersion — what actually ships, and what still lives in slide decks.</p>
+          <div class="blog-foot"><span>8 min read</span><span class="read">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </div>
+      </article>
+      <article class="blog-card" data-reveal style="--d:.08s">
+        <div class="blog-media">
+          <img src="__IMG_BLOG2__" alt="Holographic interface floating above a designer's tablet" loading="lazy">
+          <span class="blog-date">Feb 24, 2026</span>
+        </div>
+        <div class="blog-body">
+          <h3>Designing With Light: Our Neon Toolkit</h3>
+          <p>How we build cinematic dark interfaces that still convert — glow, contrast and the 5% red rule.</p>
+          <div class="blog-foot"><span>6 min read</span><span class="read">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </div>
+      </article>
+      <article class="blog-card" data-reveal style="--d:.16s">
+        <div class="blog-media">
+          <img src="__IMG_BLOG3__" alt="Futuristic red speedometer HUD" loading="lazy">
+          <span class="blog-date">Jan 30, 2026</span>
+        </div>
+        <div class="blog-body">
+          <h3>Performance Is a Design Feature</h3>
+          <p>Shipping 60fps experiences without sacrificing beauty — our budget-driven workflow for heavy scenes.</p>
+          <div class="blog-foot"><span>5 min read</span><span class="read">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="sec-head" data-reveal>
+          <span class="eyebrow">Contact</span>
+          <h2 class="sec-title">Let's Build Something <span class="red">Unreal</span></h2>
+          <p class="sec-lead">Tell us where you want to go. We'll bring the engines, the lights and the roadmap.</p>
+        </div>
+        <div data-reveal style="--d:.1s">
+          <div class="info-item">
+            <div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 7l9 6 9-6"/></svg></div>
+            <div><div class="k">Transmission</div><a class="v" href="mailto:hello@tak.studio">hello@tak.studio</a><div class="s">For projects, press and everything in between</div></div>
+          </div>
+          <div class="info-item">
+            <div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z"/></svg></div>
+            <div><div class="k">Direct Line</div><a class="v" href="tel:+358401234567">+358 40 123 4567</a><div class="s">Mon–Fri, 09:00–18:00 EET</div></div>
+          </div>
+          <div class="info-item">
+            <div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="k">The Studio</div><div class="v">Lönnrotinkatu 32, Helsinki</div><div class="s">Design District — visits by appointment</div></div>
+          </div>
+          <div class="info-item">
+            <div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+            <div><div class="k">Response Time</div><div class="v">Under 24 hours</div><div class="s">Currently booking for Q1 2027</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form hud" data-reveal="right">
+        <div class="form-head">
+          <h3>Start a Project</h3>
+          <span class="mono">Form // v2.6</span>
+        </div>
+        <form id="contact-form" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-name">Your Name</label>
+              <input id="f-name" name="name" type="text" placeholder="Ada Lovelace" required>
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" placeholder="ada@company.com" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-budget">Project Budget</label>
+            <select id="f-budget" name="budget">
+              <option value="" selected>Select a range…</option>
+              <option>€10k — €25k</option>
+              <option>€25k — €50k</option>
+              <option>€50k — €100k</option>
+              <option>€100k+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg">Tell Us About the Mission</label>
+            <textarea id="f-msg" name="message" placeholder="Goals, timeline, wildest ideas…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Transmission
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </form>
+        <div id="form-success" class="form-success" hidden>
+          <div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="form-ok-check" d="M4 12.5l5 5L20 6.5"/></svg></div>
+          <h3>Signal Received</h3>
+          <p>Your transmission is on its way through the network. We'll get back to you within 24 hours.</p>
+          <span class="mono">TAK.OS — channel open</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="foot-word" aria-hidden="true"><span>TAK®</span></div>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#home" class="logo">
+          <span class="logo-cube" aria-hidden="true"><i></i><i></i></span>
+          <b>TAK<em>®</em></b>
+        </a>
+        <p>An immersive digital experience studio crafting the web's next dimension — one impossible project at a time.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="X / Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="5" r="2"/><path d="M11 21v-7a4 4 0 0 1 8 0v7"/></svg></a>
+          <a href="#" aria-label="Dribbble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.5 7.5C9 10.5 13.5 12 19 11.5M8 20c2-4.5 4.5-8 8.5-10M4.5 13.5c4.5-.5 9 1 11.5 4.5"/></svg></a>
+          <a href="#" aria-label="Behance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h5a2.5 2.5 0 0 1 0 5H4zM4 12h5.5a2.7 2.7 0 0 1 0 5.4H4zM15 13.5h6a3 3 0 1 0-6 0zm0 0a3 3 0 0 0 5.6 2"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#blog">Journal</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Capabilities</h4>
+        <ul>
+          <li><a href="#services">Immersive Web Design</a></li>
+          <li><a href="#services">3D &amp; WebGL</a></li>
+          <li><a href="#services">Brand Identity</a></li>
+          <li><a href="#services">Development</a></li>
+          <li><a href="#services">Motion</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Coordinates</h4>
+        <ul>
+          <li><a href="mailto:hello@tak.studio">hello@tak.studio</a></li>
+          <li><a href="tel:+358401234567">+358 40 123 4567</a></li>
+          <li><a href="#contact">Lönnrotinkatu 32</a></li>
+          <li><a href="#contact">00180 Helsinki, FI</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> TAK Studio Oy</span>
+      <span>Crafted in Helsinki — 60.17°N 24.94°E</span>
+      <span class="links"><a href="#">Privacy</a><a href="#">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<button id="to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<script>
+__INLINE_THREE__
+</script>
+<script>
+__INLINE_JS_UI__
+</script>
+<script>
+__INLINE_JS_3D__
+</script>
+</body>
+</html>
